@@ -1,5 +1,6 @@
 // import "amd-loader";
-import { Ajax } from './promiseAjax';
+import { Ajax as AjaxPromise } from './promiseAjax';
+import { Ajax as AjaxAsync} from './asyncAjax';
 
 class Main {
   public static start() {
@@ -12,7 +13,7 @@ class Main {
     const headerMap = new Map();
     headerMap.set('Accept', 'application/json');
     try {
-      const result = await Ajax.PromiseAjax.getPromiseJSON(url, HTTPMethodType, headerMap);
+      const result = await AjaxPromise.PromiseAjax.getPromiseJSON(url, HTTPMethodType, headerMap);
       alert(result);
     } catch (error) {
       alert(error);

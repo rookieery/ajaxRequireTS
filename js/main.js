@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // import "amd-loader";
-import { Ajax } from './promiseAjax.js';
+import { Ajax as AjaxPromise } from './promiseAjax.js';
 class Main {
     static start() {
         document.getElementById('ajaxButton').addEventListener('click', Main.clickHandler);
@@ -20,7 +20,7 @@ class Main {
             const headerMap = new Map();
             headerMap.set('Accept', 'application/json');
             try {
-                const result = yield Ajax.PromiseAjax.getPromiseJSON(url, HTTPMethodType, headerMap);
+                const result = yield AjaxPromise.PromiseAjax.getPromiseJSON(url, HTTPMethodType, headerMap);
                 alert(result);
             }
             catch (error) {

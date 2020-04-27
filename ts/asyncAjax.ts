@@ -1,7 +1,7 @@
-import { Ajax as Ajax1 } from './promiseAjax';
+import { Ajax as AjaxPromise } from './promiseAjax';
 
-namespace Ajax {
-  export class AsyncAjax extends Ajax1.PromiseAjax {
+export namespace Ajax {
+  export class AsyncAjax extends AjaxPromise.PromiseAjax {
     public static async getAsyncJSON(url: string, HTTPMethodType: string, headerMap: Map<string, string>) {
       const response = await this.getPromiseJSON(url, HTTPMethodType, headerMap);
       return response;

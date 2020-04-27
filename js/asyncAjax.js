@@ -7,9 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var Ajax;
+import { Ajax as AjaxPromise } from './promiseAjax.js';
+export var Ajax;
 (function (Ajax) {
-    class AsyncAjax extends Ajax.PromiseAjax {
+    class AsyncAjax extends AjaxPromise.PromiseAjax {
         static getAsyncJSON(url, HTTPMethodType, headerMap) {
             return __awaiter(this, void 0, void 0, function* () {
                 const response = yield this.getPromiseJSON(url, HTTPMethodType, headerMap);
